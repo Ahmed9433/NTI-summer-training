@@ -1,4 +1,4 @@
-// ======= Folder: 1 =======
+// ======= File: 1 =======
 
 // === Task: 1 ===
 // var a = "aaa";
@@ -32,7 +32,7 @@
 //   console.log(`username: ${userName}, password ${password}`);
 // }
 
-// ======= Folder: 2 =======
+// ======= File: 2 =======
 
 // var name = prompt("Enter employee name:");
 // var age = Number(prompt("Enter employee age:"));
