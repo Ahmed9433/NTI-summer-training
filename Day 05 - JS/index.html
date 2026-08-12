@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-05-JS</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <div class="products-form-input">
+          <form id="form-input">
+            <h1 id="form-title">Add New Product</h1>
+            <div>
+              <input
+                type="text"
+                class="product-details"
+                id="product-name"
+                placeholder="Enter product name..."
+              />
+              <input
+                type="text"
+                class="product-details"
+                id="product-description"
+                placeholder="Enter product description..."
+              />
+              <select id="product-color">
+                <option value="" disabled selected hidden>
+                  Select a color...
+                </option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Yellow">Yellow</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+              </select>
+              <div>
+                <input type="checkbox" id="product-availability" />
+                <p>Out of stock</p>
+              </div>
+              <input type="hidden" id="index" value="" />
+            </div>
+            <button id="main-button" type="button" onclick="handleSubmit()">
+              Add
+            </button>
+          </form>
+        </div>
+        <div class="products-form-search">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search products..."
+          />
+        </div>
+        <div class="products-form-output">
+          <table>
+            <thead>
+              <tr id="table-titles">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Color</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="table-content"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

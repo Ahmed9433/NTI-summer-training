@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9f8f5;
+  padding: 3rem 0;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+#form-input {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: -2px -4px 0 #000;
+  border-radius: 3px;
+}
+#form-input > div {
+  display: flex;
+  gap: 0.75rem;
+}
+#form-input .product-details {
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+#form-input .product-details:focus {
+  box-shadow: 2px 4px 0 #000;
+}
+#form-input #product-color {
+  padding: 0.75rem 1rem;
+  border: 1px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+#form-input > div > div {
+  color: #9c9c9c;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+#form-input > div > div > input[type="checkbox"] {
+  accent-color: #000;
+  cursor: pointer;
+}
+#form-input > div > div > input[type="checkbox"]:checked + p {
+  color: #000;
+}
+#form-input #main-button {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  box-shadow: 2px 4px 0 #000;
+  border-radius: 3px;
+}
+#form-input #main-button:active {
+  transform: translateY(0.5px);
+}
+.products-form-search {
+  width: 100%;
+  padding: 0 1rem;
+}
+.products-form-search > input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.products-form-search > input:focus {
+  box-shadow: 2px 4px 0 #000;
+}
+.products-form-output {
+  width: 100%;
+  padding: 0 1rem 1rem 1rem;
+  box-shadow: 2px 4px 0 #000;
+  border-radius: 3px;
+}
+.products-form-output table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #000;
+  padding: 0.75rem 1rem;
+}
+#table-content td {
+  text-align: center;
+}
+.actions-container {
+  display: flex;
+  gap: 0.5rem;
+}
+.edit-button {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 2px 4px 0 #000;
+  border-radius: 3px;
+}
+.edit-button:active {
+  transform: translateY(0.5px);
+}
+.delete-button {
+  display: flex;
+  background-color: #eaa6a6;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 2px 4px 0 #000;
+  border-radius: 3px;
+}
+.delete-button:active {
+  transform: translateY(0.5px);
+}
