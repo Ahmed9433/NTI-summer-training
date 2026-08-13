@@ -1,0 +1,17 @@
+{
+  "name": "text-utilities-package",
+  "version": "1.0.0",
+  "description": "A simple text utility package",
+  "keywords": [
+    "text",
+    "string",
+    "utility"
+  ],
+  "license": "ISC",
+  "author": "Ahmed Mahmoud",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
