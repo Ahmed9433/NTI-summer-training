@@ -1,0 +1,52 @@
+.child-wrapper {
+  margin-top: 1rem;
+}
+.child-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9c9c9c;
+  margin: 0 0 0.5rem;
+}
+.child-card {
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.child-product-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+.child-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.child-tag {
+  color: #000000bf;
+  font-weight: 600;
+}
+.child-value {
+  font-weight: 700;
+  color: #000;
+}
+.child-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.child-color-strip {
+  height: 8px;
+  border-radius: 100px;
+  transition: background-color 0.3s;
+}

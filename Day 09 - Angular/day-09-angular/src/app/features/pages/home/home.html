@@ -1,0 +1,222 @@
+<div class="page-wrapper">
+  <header class="hero-banner">
+    <p class="section-eyebrow">Angular 21 · Data Binding</p>
+    <h1 class="hero-title">{{ productName }}</h1>
+  </header>
+
+  <section id="interpolation-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">01</span>
+      <div>
+        <h2>Interpolation <code ngNonBindable>{{}}</code></h2>
+        <p>Render component data as text in the template</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <p>
+        Product: <strong>{{ productName }}</strong>
+      </p>
+      <p>
+        Unit Price: <strong>${{ unitPrice }}</strong>
+      </p>
+      <p>
+        Total ({{ quantity }} units): <strong>{{ totalCost }}</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="property-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">02</span>
+      <div>
+        <h2>Property Binding <code>[property]</code></h2>
+        <p>Push component values into DOM properties</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <img class="product-image" [src]="productImageUrl" alt="Product" />
+      <div class="button-row">
+        <button class="btn btn-dark" [disabled]="addToCartDisabled">Add to Cart</button>
+        <button class="btn btn-outline-secondary" type="button" (click)="toggleCartAvailability()">
+          Toggle disabled ({{ addToCartDisabled }})
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="binding-comparison" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">03</span>
+      <div>
+        <h2>Property vs Interpolation</h2>
+        <p>Strings — both work · non-strings — use property binding</p>
+      </div>
+    </div>
+    <div class="demo-panel split-demo">
+      <div>
+        <p class="demo-label">Both work fine</p>
+        <button class="btn btn-dark">{{ planLabel }}</button>
+      </div>
+      <div>
+        <p class="demo-label">Property binding preferred</p>
+        <progress [value]="stockLevel" max="100"></progress>
+        <span>{{ stockLevel }} units</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="attribute-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">04</span>
+      <div>
+        <h2>Attribute Binding <code>[attr.name]</code></h2>
+        <p>Use when no matching DOM property exists (ARIA, title…)</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <div
+        class="stock-bar"
+        role="progressbar"
+        [attr.aria-valuenow]="stockLevel"
+        [attr.aria-valuemin]="0"
+        [attr.aria-valuemax]="100"
+        [attr.title]="stockTooltip"
+      >
+        Stock: {{ stockLevel }}
+      </div>
+    </div>
+  </section>
+
+  <section id="event-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">05</span>
+      <div>
+        <h2>Event Binding <code>(event)</code></h2>
+        <p>React to user interactions and update component state</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <button class="btn btn-dark" type="button" (click)="onOrderClick()">
+        Place Order ({{ orderCount }})
+      </button>
+      <label class="input-field">
+        Search
+        <input type="text" (keyup)="onSearchInput($event)" placeholder="Search products…" />
+      </label>
+      <p>
+        Query: <strong>{{ searchQuery || '-' }}</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="cart-counter" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">06</span>
+      <div>
+        <h2>Event Example — Cart Quantity</h2>
+        <p>Multiple events updating the same state variable</p>
+      </div>
+    </div>
+    <div class="demo-panel counter-controls">
+      <button class="btn btn-dark" type="button" (click)="decreaseQty()">−</button>
+      <span class="counter-display">{{ cartQuantity }}</span>
+      <button class="btn btn-dark" type="button" (click)="increaseQty()">+</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="clearCart()">Clear</button>
+    </div>
+  </section>
+
+  <section id="class-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">07</span>
+      <div>
+        <h2>Class Binding <code>[class.name]</code></h2>
+        <p>Conditionally apply CSS classes from the component</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <div class="button-row">
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="toggleSale()">
+          Toggle sale
+        </button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="toggleOutOfStock()">
+          Toggle out-of-stock
+        </button>
+      </div>
+      <div class="product-card" [class.on-sale]="isOnSale" [class.sold-out]="isOutOfStock">
+        sale={{ isOnSale }} · out-of-stock={{ isOutOfStock }}
+      </div>
+    </div>
+  </section>
+
+  <section id="style-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">08</span>
+      <div>
+        <h2>Style Binding <code>[style.prop]</code></h2>
+        <p>Set inline CSS properties directly from the component</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <div class="button-row">
+        <input type="color" [(ngModel)]="cardColor" />
+        <button class="btn btn-sm btn-outline-dark" type="button" (click)="adjustBadgeFont(-2)">
+          A−
+        </button>
+        <button class="btn btn-sm btn-outline-dark" type="button" (click)="adjustBadgeFont(2)">
+          A+
+        </button>
+      </div>
+      <div
+        class="styled-card"
+        [style.backgroundColor]="cardColor"
+        [style.fontSize.px]="badgeFontSize"
+      >
+        {{ badgeFontSize }}px
+      </div>
+    </div>
+  </section>
+
+  <section id="two-way-binding-demo" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">09</span>
+      <div>
+        <h2>Two-way Binding <code>[(ngModel)]</code></h2>
+        <p>Sync view and component in both directions (needs FormsModule)</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <label class="input-field">
+        Promo Code
+        <input type="text" [(ngModel)]="promoCode" placeholder="Enter promo code…" />
+      </label>
+      <p>
+        Code applied: <strong>{{ promoCode || '…' }}</strong>
+      </p>
+    </div>
+    <button class="btn btn-dark mt-3" (click)="applyPromoCode()">Apply ANGULAR21</button>
+  </section>
+
+  <section id="parent-to-child" class="content-section">
+    <div class="section-heading">
+      <span class="number-badge">10</span>
+      <div>
+        <h2>Parent → Child <code>@Input()</code></h2>
+        <p>Pass data down using property binding on the child selector</p>
+      </div>
+    </div>
+    <div class="demo-panel">
+      <p class="demo-note">
+        The card below lives inside <code>app-child</code> and receives all its data from this
+        parent via <code>@Input()</code> properties. Change anything above (sale toggle, color
+        picker, cart quantity…) and watch the child update instantly.
+      </p>
+      <app-child
+        [productName]="productName"
+        [unitPrice]="unitPrice"
+        [cartQuantity]="cartQuantity"
+        [isOnSale]="isOnSale"
+        [cardColor]="cardColor"
+      />
+    </div>
+  </section>
+</div>

@@ -1,0 +1,28 @@
+<div class="child-wrapper">
+  <div class="card-container">
+    <p class="child-label">Child Component</p>
+
+    <div class="child-card" [style.borderColor]="cardColor">
+      <h3 class="child-product-name">{{ productName }}</h3>
+
+      <div class="child-row">
+        <span class="child-tag">Price</span>
+        <span class="child-value">${{ unitPrice }}</span>
+      </div>
+
+      <div class="child-row">
+        <span class="child-tag">Cart Qty</span>
+        <span class="child-value">{{ cartQuantity }}</span>
+      </div>
+
+      <div class="child-row">
+        <span class="child-tag">On Sale</span>
+        <span class="child-badge" [class.active-badge]="isOnSale">
+          {{ isOnSale ? 'YES' : 'NO' }}
+        </span>
+      </div>
+
+      <div class="child-color-strip" [style.backgroundColor]="cardColor"></div>
+    </div>
+  </div>
+</div>
